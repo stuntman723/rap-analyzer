@@ -1,0 +1,3 @@
+venv
+*.pyc
+rap_analyzer/lib/python2.7/site-packages/django/contrib/staticfiles

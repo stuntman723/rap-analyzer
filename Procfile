@@ -1,0 +1,1 @@
+web: gunicorn rap_analyzer.wsgi --log-file -
