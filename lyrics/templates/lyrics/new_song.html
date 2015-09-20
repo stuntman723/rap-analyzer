@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<form action="/new_song" method="post">
+{% csrf_token %}
+    <div class="col-md-offset-4 col-md-4 text-center">
+{#        <p>Artist's Name: </p>#}
+{#        <input type="text" name="artist-name">#}
+{#        <br>#}
+{#        <p>Songs's Name: </p>#}
+{#        <input type="text" name="song-name">#}
+{#        <br>#}
+{#        <p>Lyrics: </p>#}
+{#        <textarea type="text" style="width: 400px; height: 100px;" name="lyrics"></textarea>#}
+{#        <br><br>#}
+        {% for field in form %}
+        <p>{{ field.label }} :</p>
+        {{ field }}
+            <br>
+        {% endfor %}
+        <input type="submit" value="Add Song" />
+    </div>
+</form>
+
+{% endblock %}
