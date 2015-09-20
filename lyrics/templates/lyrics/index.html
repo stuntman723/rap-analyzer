@@ -1,0 +1,30 @@
+{% if song_list %}
+    <table>
+        <thead>
+        <th>Name</th>
+        <th>Artist</th>
+        <th># Words</th>
+        <th># Unique Words</th>
+        <th>Unique words %</th>
+        <th>Repeated Rhymes</th>
+        <th>Bad Words</th>
+        <th>Thug Rating</th>
+        <th>Avg. Syllables</th>
+        </thead>
+    {% for song in song_list %}
+        <tr>
+            <td>{{ song.name}}</td>
+            <td>{{ song.artist.name}}</td>
+            <td>{{ song.number_of_words}}</td>
+            <td>{{ song.number_unique_words}}</td>
+            <td>{{ song.unique_word_percent}} %</td>
+            <td>{{ song.repeated_rhymes}}</td>
+            <td>{{ song.bad_words}}</td>
+            <td>{{ song.thug_rating}}</td>
+            <td>{{ song.avg_syllables}}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% else %}
+    <p>No songs are available.</p>
+{% endif %}
